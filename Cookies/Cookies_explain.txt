@@ -1,0 +1,35 @@
+get请求应用于获取网页数据：requests.get()
+post请求应用于向网页提交数据：提交表单类数据
+
+requests headers存储浏览器的请求信息
+response headers存储服务器的响应
+
+session:会话
+cookies中存储着session的编码信息，session中又存储着cookies的信息
+
+import requests
+s = requests.session()
+#创建session对象，相当于创建了一个特定的会话，帮我们自动保持了cookies
+url='网址'
+headers={'请求头'}#防止反爬虫
+data={'登陆数据'}#账号密码类隐私的数据
+session.post(url,headers,data)
+#在创建的session下用post发起登陆请求，放入参数
+
+type(session.cookies) : <class 'requests.cookies.RequestsCookieJar'>
+
+#存储cookies到本地
+cookies 转成 字典 ：requests.utils.dict_from_cookiejar(cj)
+                   参数：cj-从中提取cookies的CookiesJar对象
+                   返回类型：字典
+
+json函数：需导入json库
+json.dumps : 将python对象编码成json字符串
+json.loads : 将已编码的json字符串解析为python对象
+
+#读取cookies
+json函数：需导入json库
+json.loads : 将已编码的json字符串解析为python对象
+字典 转成cookies : request.utils.cookiejar_from_dict('字典')
+session.cookies = cookies
+
