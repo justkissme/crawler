@@ -1,0 +1,12 @@
+bs对象=BeautifulSoup(要解析的文本，'解析器')
+
+#提取数据的两种方法：
+    find(标签，属性)       #提取满足要求的首个数据
+    find_all(标签，属性)   #提取满足要求的全部数据
+
+    Tag对象的三种常用属性和方法：
+        Tag.find()和Tag.find_all()      提取Tag中的Tag
+        Tag.text                        提取Tag中的文字
+        Tag['属性名']                   输入参数：属性名，可提取其值
+        
+#ctrl+u打开网页源代码
