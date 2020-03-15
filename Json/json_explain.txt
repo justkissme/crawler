@@ -1,0 +1,18 @@
+XHR         一种不借助刷新网页即可传输数据的对象
+JS和CSS     前段代码，负责发起请求和页面实现
+
+Headers:标头（请求信息）
+Preview:预览
+Response:响应
+Cookies:Cookies
+Timing:时间
+
+XHR用于传输数据，它能传输很多种数据，json是被传输的一种数据格式
+#使用方法
+r=requests.get('网址')
+r.json()
+
+Query String Parameters 查询字符串参数
+user-agent 用户代理
+origin 源头
+referer 引用来源
