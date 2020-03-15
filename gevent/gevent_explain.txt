@@ -1,0 +1,20 @@
+同步:一个任务结束后才能启动下一个
+异步:一个任务未完成时可以执行其他多个任务,彼此不受影响
+
+from gevent import monkey   #从gevent库导入monkey模块
+monkey.patch_all()  #monkey.patch_all()能把程序变成协作式运行,可以帮助程序实现异步
+
+
+tasks_list=[]#创建一个空的任务列表
+task=gevent.spawn(函数名,该函数参数)    #用gevent.spawn()函数创建任务
+tasks_list.append(tasks)    #往任务列表里添加任务
+gevent.joinall(tasks_list)  #执行任务列表里的所有任务
+
+queue模块
+from gevent.queue import Queue
+work = Queue()  #创建队列对象,赋值给work
+work.put_nowait()   #把参数都存储进队列
+work.get_nowait()   #把参数从队列中取出
+work.empty()        #判断队列是不是空
+work.qsize()        #判断队列里还剩多少数量
+work.full()         #判断队列是否为满
