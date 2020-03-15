@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from twilio.rest import Client
+from twilio.rest import Client#用于往手机上发送短信
 import schedule
 import time
 
@@ -26,7 +26,7 @@ def weather():
         send.append(b)
     return send
 
-def send_message(send):
+def send_message(send):#账号密码得自己注册,这个不能使用我的
     account_sid = 'AC0c532124f2f92d98e2285da84e0f9f0d'
     auth_token = 'd3ac34bde7ef6b91aefbc05959135f5e'
     client = Client(account_sid,auth_token)
